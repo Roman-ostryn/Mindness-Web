@@ -287,7 +287,7 @@ function Home() {
               <Phone src={images.practices} alt="Mindness practices screen with breathing, gratitude, and journaling" />
             </div>
             <div className="gallery-phone gallery-phone-voice">
-              <Phone src={images.companionSelectB} alt="Mindness companion selection screen with avatar choices" />
+              <Phone src={images.animatedAvatar} alt="Mindness animated avatar voice screen" />
             </div>
             <div className="gallery-stage-note" aria-hidden="true">
               <span>Small returns to yourself</span>

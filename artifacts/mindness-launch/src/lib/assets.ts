@@ -1,5 +1,5 @@
 import chatImage from '@assets/screen-chat.png';
-import companionSelectBImage from '@assets/screen-companion-select-b.png';
+import animatedAvatarImage from '@assets/screen-animated-avatar.png';
 import heroImage from '@assets/hero.png';
 import introImage from '@assets/screen-companion-intro.png';
 import practicesImage from '@assets/screen-practices.png';
@@ -13,5 +13,5 @@ export const images = {
   practices: practicesImage,
   chat: chatImage,
   voice: voiceImage,
-  companionSelectB: companionSelectBImage,
+  animatedAvatar: animatedAvatarImage,
 } as const;
