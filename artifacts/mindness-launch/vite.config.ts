@@ -5,9 +5,7 @@ import { defineConfig } from 'vite';
 
 import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 
-// Defaults let Vercel/CI run `vite build` without extra env vars.
-// Local dev still sets these via scripts/dev-website.ps1.
-const rawPort = process.env.PORT ?? '3000';
+const rawPort = process.env.PORT ?? '5174';
 const port = Number(rawPort);
 
 if (Number.isNaN(port) || port <= 0) {

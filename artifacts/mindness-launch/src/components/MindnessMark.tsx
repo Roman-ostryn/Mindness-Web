@@ -5,7 +5,7 @@ type MindnessMarkProps = {
   className?: string;
 };
 
-export function MindnessMark({ size = 23, className = '' }: MindnessMarkProps) {
+export function MindnessMark({ size = 31, className = '' }: MindnessMarkProps) {
   const iconSize = Math.round(size * 0.46);
   const strokeWidth = Math.max(1.5, size / 26);
 

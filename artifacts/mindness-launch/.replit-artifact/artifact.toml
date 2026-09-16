@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Mindness Launch Website"
+description = "A calm, cinematic one-page launch website for Mindness, an AI companion app that helps people talk, understand, and grow."
+version = "1.0.0"
+id = "artifacts/mindness-launch"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25899
+
+[services.development]
+run = "pnpm --filter @workspace/mindness-launch run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mindness-launch", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/mindness-launch/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25899"
+BASE_PATH = "/"
