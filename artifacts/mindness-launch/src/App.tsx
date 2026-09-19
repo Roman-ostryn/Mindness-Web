@@ -281,7 +281,7 @@ function Home() {
           </div>
           <div className="gallery-stage reveal delay-1" aria-label="Mindness app screen preview">
             <div className="gallery-phone gallery-phone-welcome">
-              <Phone src={images.welcome} alt="Mindness welcome screen with talk, understand, and grow choices" />
+              <Phone src={images.companionSelectB} alt="Mindness companion selection screen" />
             </div>
             <div className="gallery-phone gallery-phone-practices">
               <Phone src={images.practices} alt="Mindness practices screen with breathing, gratitude, and journaling" />
