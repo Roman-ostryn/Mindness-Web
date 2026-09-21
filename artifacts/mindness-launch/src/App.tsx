@@ -6,7 +6,8 @@ import { MindnessMark } from '@/components/MindnessMark';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
-import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
+import PrivacyPolicyPage from '@/pages/privacy-policy';
+import { Link, Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 import { images } from '@/lib/assets';
 
 const queryClient = new QueryClient();
@@ -85,7 +86,7 @@ function Home() {
             <a href="#why" onClick={jump}>Why Mindness</a>
             <a href="#journey" onClick={jump}>Your journey</a>
             <a href="#plans" onClick={jump}>Plans</a>
-            <a href="#privacy" onClick={jump}>Privacy</a>
+            <Link href="/privacy">Privacy</Link>
             <a className="nav-cta" href="#download" onClick={jump}>Get the app <ArrowUpRight size={14} /></a>
           </div>
           <button className="menu-toggle" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen}>
@@ -309,6 +310,9 @@ function Home() {
               <div className="privacy-point"><LockKeyhole size={18} strokeWidth={1.5} /><h3>Your space stays yours</h3><p>Private conversations, treated with discretion from the first word.</p></div>
               <div className="privacy-point"><ShieldCheck size={18} strokeWidth={1.5} /><h3>Clear by default</h3><p>No dark patterns, no pressure, no productivity theater.</p></div>
             </div>
+            <p className="privacy-policy-link">
+              <Link href="/privacy">Read our full Privacy Policy</Link>
+            </p>
           </div>
         </div>
       </section>
@@ -343,7 +347,7 @@ function Home() {
               <div className="footer-column">
                 <span className="footer-label">Read</span>
                 <a href="#conversation" onClick={jump}>Our approach</a>
-                <a href="#privacy" onClick={jump}>Privacy</a>
+                <Link href="/privacy">Privacy Policy</Link>
                 <a href="#top" onClick={jump}>Back to top</a>
               </div>
               <div className="footer-column">
@@ -368,6 +372,7 @@ function Router() {
     <RoutedErrorBoundary>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/privacy" component={PrivacyPolicyPage} />
         <Route component={NotFound} />
       </Switch>
     </RoutedErrorBoundary>
