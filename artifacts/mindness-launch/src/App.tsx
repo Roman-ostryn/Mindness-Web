@@ -12,24 +12,47 @@ import { images } from '@/lib/assets';
 
 const queryClient = new QueryClient();
 
+const APP_STORE_URL = 'https://apps.apple.com/app/id6809869846';
+
 type StoreKind = 'App Store' | 'Google Play';
 
 function DownloadButton({ store, onDownload, quiet = false }: { store: StoreKind; onDownload: (store: StoreKind) => void; quiet?: boolean }) {
   const isAppStore = store === 'App Store';
-  return (
-    <button
-      className={`store-badge ${quiet ? 'store-badge-quiet' : ''}`}
-      onClick={() => onDownload(store)}
-      aria-label={`${store} download coming soon`}
-    >
+  const className = `store-badge ${quiet ? 'store-badge-quiet' : ''}`;
+  const content = (
+    <>
       <span className="store-icon" aria-hidden="true">
         {isAppStore ? <Apple size={21} strokeWidth={1.8} /> : <Play size={20} strokeWidth={1.8} fill="currentColor" />}
       </span>
       <span className="store-copy">
-        <small>Coming soon on</small>
+        <small>{isAppStore ? 'Download on the' : 'Coming soon on'}</small>
         <strong>{store}</strong>
       </span>
       <ArrowUpRight className="store-arrow" size={15} strokeWidth={1.8} aria-hidden="true" />
+    </>
+  );
+
+  if (isAppStore) {
+    return (
+      <a
+        className={className}
+        href={APP_STORE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download Mindness on the App Store"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      className={className}
+      onClick={() => onDownload(store)}
+      aria-label="Google Play download coming soon"
+    >
+      {content}
     </button>
   );
 }
@@ -63,7 +86,7 @@ function Home() {
   }, [notice]);
 
   const handleDownload = (store: StoreKind) => {
-    setNotice(`${store} is on its way. Leave a little room in your day — Mindness is coming soon.`);
+    setNotice(`${store} is on its way. Mindness will be there once the Android app is ready.`);
   };
 
   const jump = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -320,7 +343,7 @@ function Home() {
       <section className="final-cta" id="download">
         <div className="container reveal">
           <h2>You don't have to <em>figure it out alone.</em></h2>
-          <p>Mindness is coming soon. Leave the noise at the door and make a little room for what's true.</p>
+          <p>Mindness is on the App Store. Leave the noise at the door and make a little room for what's true.</p>
           <div className="store-row">
             <DownloadButton store="App Store" onDownload={handleDownload} quiet />
             <DownloadButton store="Google Play" onDownload={handleDownload} quiet />

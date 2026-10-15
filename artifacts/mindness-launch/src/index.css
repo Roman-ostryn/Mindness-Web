@@ -125,6 +125,7 @@ a { color: inherit; text-decoration: none; }
   background: #29383b;
   color: #f6f2e9;
   text-align: left;
+  cursor: pointer;
   transition: transform .25s ease, filter .25s ease;
 }
 .store-badge:hover { transform: translateY(-3px); filter: brightness(1.12); }

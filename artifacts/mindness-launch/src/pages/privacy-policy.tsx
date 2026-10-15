@@ -1,7 +1,7 @@
 import { Link } from 'wouter';
 import { MindnessMark } from '@/components/MindnessMark';
 
-const LAST_UPDATED = '21 September 2026';
+const LAST_UPDATED = '15 October 2026';
 const CONTACT_EMAIL = 'info@mindness.co.uk';
 
 export default function PrivacyPolicyPage() {
@@ -162,9 +162,9 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2>Subscriptions and payments</h2>
           <p>
-            When in-app subscriptions are available, payments are handled by Apple (App Store) or Google
-            (Google Play). We do not receive your full payment card details. Store terms and privacy notices
-            apply to those transactions.
+            App Store subscription payments are handled by Apple. If Mindness is offered on Google
+            Play, those payments are handled by Google. We do not receive your full payment card details.
+            Store terms and privacy notices apply to those transactions.
           </p>
         </section>
 
